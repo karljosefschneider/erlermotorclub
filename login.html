@@ -1,0 +1,47 @@
+<!--             Login-Bereich für interne Vereinsnachrichten                -->
+<!----------------------------------------------------------------------------->
+<script>
+'use strict';
+document.addEventListener('DOMContentLoaded', function () {
+    var passwort = "goggokart";
+    var eingabe = "",
+	    text    = "",
+        zaehler = 1;
+      while (eingabe != passwort && zaehler < 2) {
+        eingabe = window.prompt("Bitte Passwort eingeben", "");
+        zaehler++;
+      }
+
+    if (eingabe != passwort) {
+      while (eingabe != "intern" && zaehler <= 3) {
+        eingabe = window.prompt("Passwort " + zaehler + ". Versuch", "");
+        zaehler++;
+      }
+      document.location.href="index.html";
+    } else {
+      document.location.href="intern.html";
+    }
+  document.querySelector('output').innerText = text;
+
+});
+
+</script>
+
+<!--
+<script language="JavaScript">
+
+var passwort = "intern";
+var eingabe = window.prompt("Bitte Passwort eingeben","");
+
+if(eingabe != passwort) {
+  document.location.href="index.html";
+} else {
+  document.location.href="intern.html";
+}
+</script>
+-->
+<!--<script language="JavaScript">
+var eingabe = window.prompt("Bitte Passwort eingeben","");
+document.location.href = eingabe + ".html";
+</script>
+-->
