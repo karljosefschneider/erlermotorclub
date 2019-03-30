@@ -1,6 +1,11 @@
+---
+layout: default
+title: Interne Nachrichten des Erler Motor Clubs
+description: Bitte geben Sie das Passwort ein!
+---
 <!--             Login-Bereich für interne Vereinsnachrichten                -->
 <!----------------------------------------------------------------------------->
-<script>
+<!-- <script>
 'use strict';
 document.addEventListener('DOMContentLoaded', function () {
     var passwort = "goggokart";
@@ -25,4 +30,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+</script> -->
+<script type="text/javascript">
+
+function passw()
+{
+  if(document.passwort.pswd.value=="goggokart"){
+  document.location.href="intern.html";
+  }else{
+/*alert("Falsches Passwort");*/
+
+  document.location.href="login.html";
+
+  }
+  }
+
+
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
 </script>
+
+<form name="passwort">
+
+<input type="password" name=pswd id="myInput">
+<checkbox type="checkbox" onclick="myFunction()">Anzeige
+<button type=button onClick="passw()">anmelden
+
+</form>

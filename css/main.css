@@ -144,7 +144,7 @@ nav li {
 
 nav li a {                             /* Formatierung der Navi-Buttons */
   margin-bottom: 5px !important;
-  padding: 5px 0px;                   /* Innenabstände oben/unten & seitlich*/
+  padding: 5px 0px;                    /* Innenabstände oben/unten & seitlich*/
 
   display: block;
 	text-decoration: none;               /* keine Aufzählungszeichen */
@@ -477,4 +477,29 @@ table.tabelle3 thead {
   h3 {
     font-size: 2rem;                 /* h3 Schriftgröße */
   }
+}
+
+/*                     Formatierung des Login-Fensters                        */
+/*----------------------------------------------------------------------------*/
+form {
+  width: 40em;
+}
+/* Größe und Position des Texteingabe-Fensters */
+input {
+  padding: .2em .5em;
+  margin-top: 5%;                    /* Abstand oben */
+  margin-bottom: 3%;                 /* Abstand unten */
+  margin-left: 34%;                  /* Abstand links */
+  width: 30%;                        /* Breite */
+  height: 2em;                       /* Höhe */
+  background-color: #fffbf0;
+  border: 1px solid #e7c157;
+}
+
+/* Größe und Position des Anmelde-Button */
+button {
+  margin-bottom: 5%;                 /* Abstand unten */
+  margin-left: 40%;                  /* Abstand links */
+  width: 20%;                        /* Breite */
+  height: 3em;                       /* Höhe */
 }
