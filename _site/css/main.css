@@ -270,9 +270,10 @@ h4 {                                   /* Überschrift h4 */
 /*                        Konfiguration von Einzelbildern                     */
 /*----------------------------------------------------------------------------*/
 img {
-  width: 100%;            /* Bildbreite */
-  height: auto;           /* verhindert, dass große Bilder über ihr
-                             Container-Element hinauswachsen. */
+  width: 100%;                       /* Bildbreite */
+  border-radius: 10px;               /* Bildränder abrunden */
+  height: auto;                      /* verhindert, dass große Bilder über ihr
+                                        Container-Element hinauswachsen. */
 }
 
 /*    Konfiguration von Bildern und Bildunterschriften in mehreren Spalten    */
@@ -282,23 +283,31 @@ figcaption {
 	margin: 0;
 	padding: 0;
 }
-
-figure.einzel1 {                     /* ordnet 1 Bild an */
+figure.bild50 {                      /* ordnet 1 Bild zentriert an */
+  position: relative;
+	display: inline-block;
+  border-radius: 50%;
+  width: 50%;                        /* Bildbreite 50 % */
+  margin-left: 25%;                  /* Rand links 25 % */
+}
+figure.einzel1 {                     /* ordnet 1 Bild zentriert an */
 	position: relative;
 	display: inline-block;
-	width: 99.5%;                      /* Breite eines Bildes */
+	width: 98.1%;                      /* Bildbreite 98,1 % */
+  margin-left: 1%;                   /* Rand links 1 % */
 }
 figure.einzel2 {                     /* ordnet 2 Bilder nebeneinander an */
 	position: relative;
 	display: inline-block;
-  width: 47%;                        /* Breite eines Bildes */
-  margin-left: 2%;                   /* Rand links */
+  width: 47%;                        /* Bildbreite 47 % */
+  margin-left: 2%;                   /* Rand links 2 % */
   background-color: transparent;     /* Hintergrundfarbe */
 }
 figure.einzel4 {                     /* ordnet 4 Bilder nebeneinander an */
 	position: relative;
 	display: inline-block;
-	width: 23.5%;                      /* Breite eines Bildes */
+	width: 23.5%;                      /* Bildbreite 23,5 % */
+  margin-left: 0.7%;                 /* Rand links 1 % */
 }
 
 figure img {
