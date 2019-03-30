@@ -144,7 +144,7 @@ nav li {
 
 nav li a {                             /* Formatierung der Navi-Buttons */
   margin-bottom: 5px !important;
-  padding: 10px 0px;                   /* Innenabstände oben/unten & seitlich*/
+  padding: 5px 0px;                   /* Innenabstände oben/unten & seitlich*/
 
   display: block;
 	text-decoration: none;               /* keine Aufzählungszeichen */
