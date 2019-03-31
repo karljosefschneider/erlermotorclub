@@ -204,8 +204,8 @@ nav ul ul li {
   padding-top: 10px;                   /* Abstand oben in der Box */
   margin-top: 100px;                   /* Abstand der Box nach oben */
   margin-bottom: 20px;                 /* Abstand der Box nach unten */
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*                Textbereich für die einzelnen Seiten formatieren            */
@@ -216,6 +216,8 @@ main {
   width: auto;                         /* Breite des Elementes */
   margin: auto;                        /* Randabstände */
   margin-bottom: 50px;                 /* Abstand von der Fußzeile */
+  padding-right: 1rem;                 /* Innenabstand rechts */
+  padding-left: 1rem;                  /* Innenabstand links */
   flex-grow: 1;                        /* maximale Ausdehnung */
 }
 
@@ -450,7 +452,7 @@ button {
   .seitenkopf {
     max-width: 35rem;                /* Breite */
   }
-  main{
+  main {
     max-width: 45rem;                /* Breite */
   }
   h1 {
@@ -477,7 +479,7 @@ button {
     padding-left: 3rem;
     padding-right: 3rem;
   }
-  main{
+  main {
     max-width: 54rem;
   }
   h1 {
@@ -502,7 +504,7 @@ button {
     padding-left: 3rem;
     padding-right: 3rem;
   }
-  main{
+  main {
     max-width: 64rem;                /* Breite */
     padding-left: 3rem;
     padding-right: 3rem;
