@@ -3,22 +3,24 @@
 /*                                Body                                        */
 /*----------------------------------------------------------------------------*/
 html, body {
-    width: 100%;
+  width: 100%;
 }
 body {
-display: flex;                       /* Child-Elemente in Reihe */
-flex-direction: column;              /* Reihe als Säule anordnen */
-min-height: auto;                    /* Mindesthöhe Browswerfenster */
-background-color: lightgrey;         /* Hintergrundfarbe */
-font-family: "Calibri", Arial, Helvetica, sans-serif;
+  display: flex;                       /* Child-Elemente in Reihe */
+  flex-direction: column;              /* Reihe als Säule anordnen */
+  min-height: auto;                    /* Mindesthöhe Browswerfenster */
+  background-color: lightgrey;         /* Hintergrundfarbe */
+  font-family: "Calibri", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 /*                     zentrierte Ausrichtung der Elemente                    */
 /*----------------------------------------------------------------------------*/
-body,
+
 .wrapper {
   margin: 0 auto;
-  max-width: 80em;
+  max-width: 84rem;
 }
 
 /*         Header  (feststehender Kopf mit Logo und Navigationsmenü)          */
@@ -27,26 +29,18 @@ body,
 /*                            Header formatieren                              */
 /*----------------------------------------------------------------------------*/
 header {
-  position:fixed;                    /* Position fixiert */
-  width: 96%;                        /* Breite = 96% der Seitenbereite */
-  /* keine Höhenangabe, diese ergibt sich automatisch aus dem Inhalt*/
-  top: 0px;                          /* Abstand vom oberen Seitenrand */
-  left: 1%;                          /* Abstand vom linken Seietenrand */
-  padding: 10px;                     /* Innenränder des Header-Blocks */
+  margin-bottom: 1rem;               /* Abstand nach unten */
+  padding: 1rem;                     /* Innenränder des Header-Blocks */
   background: yellowgreen;           /* Hintergrundfarbe */
-  z-index: 10;                       /* ein z-index > 1 sorgt dafür, dass der
-                                        Bereich beim Scrollen nicht vom nach-
-                                        folgenden Inhalt überdeckt wird */
 }
 
 /*                              Logo formatieren                              */
 /*----------------------------------------------------------------------------*/
 .logo-img {
-  width: 94%;                        /* Breite des Logos 94 %*/
-  margin-left: 3%;                   /* Rand links 3 % */
   height: auto;                      /* Höhe des Logos an Bildschirm angepasst*/
-  border-radius: 10px;               /* abgerundete Ecken */
-  display: inline-block;             /* Ausrichtung in der Box */
+  margin-bottom: 1rem;               /* Abstand unten */
+  border-radius: 1rem;               /* abgerundete Ecken */
+  display: block;                    /* Ausrichtung in der Box */
 }
 
 /*   Navigation nach Bildschirmbreite horizontal oder vertikal formatieren    */
@@ -55,136 +49,79 @@ header {
 /*https://wiki.selfhtml.org/wiki/CSS/Tutorials/Dropdown-Men%C3%BCs_mit_CSS_gestalten*/
 /*----------------------------------------------------------------------------*/
 
-input#responsive-nav,                /* Navigations-Icon ausblenden */
-label.responsive-nav-label {
-  display: none;
-}
-
-nav ul {
-  margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: row;
-}
-
-nav li {
-  list-style: none;
-	margin: 0.5em;
-	padding: 0;
-  flex: 1;
-  font-size: .8em;                     /* Schriftgröße der Listenelemente */
-}
-
-nav a {
-	padding: 0.4em;
-	text-decoration: none;               /* keine Aufzählungszeichen */
-  font-family: arial, sans-serif;      /* Schriftart */
-  font-weight: bold;                   /* Schriftart "fett" */
-	text-align: center;                  /* Schriftausrichtung zentriert */
-	border: 1px solid darkblue;          /* Rahmen der Boxen */
-	border-radius: 10px;                 /* Radien der Rahmen */
-	box-shadow: 0 5px 10px white inset;  /* Schatten der Boxen */
-	color: gold;                         /* Textfarbe */
-	background-color: darkblue;          /* Hintergrundfarbe */
-	transition: all .25s ease-in;
-}
-
-nav a:focus,
-nav a:hover,
-nav li[aria-current] a:focus,
-nav li[aria-current] a:hover {         /* Farbwechsel beim Überfahren */
-	color: darkblue;                     /* Textfarbe */
-	background-color: gold;              /* Hintergrundfarbe */
-}
-
-/*                Vertikale Ausrichtung für schmale Bildschirme               */
-/*        siehe:  ttp://www.olivergast.de/blog/2015/05/22/css                 */
-/*----------------------------------------------------------------------------*/
-@media screen and (max-width: 1024px) {   /* Angabe der Bildschirmbreite für die
-                                             responsive Darstellung des Menüs */
-
-label.responsive-nav-label {           /* Navigationsbalken */
+.responsive-nav-label {                /* Navigationsbalken */
   position: relative;
   display: flex;
-  width: 87%;
-  left: 5%;
-  border-radius: 10px;                 /* Bildränder abrunden */
-  padding: 10px;                       /* Innenabstände */
-  background: blue;                    /* Hitergrundfarbe */
+  border-radius: 1rem;                 /* Bildränder abrunden */
+  padding: .75rem 1rem;                /* Innenabstände */
+  background-color: blue;              /* Hitergrundfarbe */
   cursor: pointer;                     /* Cursor Handsymbol */
   color: white;                        /* Textfarbe */
 }
 
-label.responsive-nav-label span {
-  margin-right: 10px;
+.responsive-nav-label span {
+  margin-right: 1rem;
 }
 
 nav {
-  position: absolute;
-  top: -9999px;
-  padding: 10px;
+  display: none;
+  flex-direction: column;
+  margin-top: 1rem;
 }
 
-input#responsive-nav[type=checkbox]:checked ~ nav {
-  position: relative;
-  top: 0;
-}
-
-nav a:after {
+input#responsive-nav {
   display: none;
 }
 
-nav ul {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
+input#responsive-nav[type=checkbox]:checked ~ nav {
+  display: flex;
 }
 
-nav li {
-  float: none !important;
-  width: 25%;                          /* Breite */
-  border-bottom: none !important;
-}
-
-nav li a {                             /* Formatierung der Navi-Buttons */
-  margin-bottom: 5px !important;
-  padding: 5px 0px;                    /* Innenabstände oben/unten & seitlich*/
-
+nav a {                                /* Formatierung der Navi-Buttons */
+  margin-bottom: 1rem;
+  padding: .5rem 1rem;                 /* Innenabstände oben/unten & seitlich*/
   display: block;
-	text-decoration: none;               /* keine Aufzählungszeichen */
-  font-family: arial, sans-serif;      /* Schriftart */
+  text-decoration: none;               /* keine Aufzählungszeichen */
+  text-align: center;                  /* Schriftausrichtung zentriert */
+  font-size: 1.25em;                     /* Schriftgröße der Links */
   font-weight: bold;                   /* Schriftart "fett" */
-	text-align: center;                  /* Schriftausrichtung zentriert */
-	border: 1px solid darkblue;          /* Rahmen der Boxen */
-	border-radius: 10px;                 /* Radien der Rahmen */
-	box-shadow: 0 5px 10px white inset;  /* Schatten der Boxen */
-	color: gold;                         /* Textfarbe */
-	background-color: darkblue;          /* Hintergrundfarbe */
-	transition: all .25s ease-in;
+  border: 1px solid darkblue;          /* Rahmen der Boxen */
+  border-radius: 10px;                 /* Radien der Rahmen */
+  box-shadow: 0 5px 10px white inset;  /* Schatten der Boxen */
+  color: gold;                         /* Textfarbe */
+  background-color: darkblue;          /* Hintergrundfarbe */
+  transition-property: background-color, color;
+  transition-duration: .125s;
+  transition-timing-function: ease-in;
 }
 
-nav ul li:hover {
-  background: none;
-}
-
-nav ul li a:hover {                    /* Farbänderungen beim Überfahren */
+nav a:focus,
+nav a:hover {                          /* Farbwechsel beim Überfahren */
   color: darkblue;                     /* Textfarbe */
-	background-color: gold;              /* Hintergrundfarbe */
+  background-color: gold;              /* Hintergrundfarbe */
 }
 
-nav ul ul {
-  position: relative !important;
-  width: 100%;
-  left: 0 !important;
-  top: 0 !important;
-  background: none !important;
-  box-shadow: none;
-}
 
-nav ul ul li {
-  padding-left: 20px;
-}
+/*                Vertikale Ausrichtung für schmale Bildschirme               */
+/*        siehe:  ttp://www.olivergast.de/blog/2015/05/22/css                 */
+/*----------------------------------------------------------------------------*/
+@media screen and (min-width: 800px) {   /* Angabe der Bildschirmbreite für die
+                                             responsive Darstellung des Menüs */
+
+   input#responsive-nav,                /* Navigations-Icon ausblenden */
+   .responsive-nav-label {
+     display: none;
+   }
+   nav {
+   	 display: flex;
+   	 flex-direction: row;
+     justify-content: space-between;
+   }
+   nav a {
+     margin-bottom: 0;
+   	 padding: .4em .8em;
+     font-size: .8em;                     /* Schriftgröße der Links */
+   }
 }
 
 /*                         Hauptinhalt der Webseite                           */
@@ -195,17 +132,16 @@ nav ul ul li {
   width: 80%;                          /* Breite der Box festlegen */
   height: auto;                        /* Höhe der Box variabel */
   border: 2px solid #000000;           /* Rahmen  der Textbox festlegen*/
-  box-shadow:0px 8px 10px #000000;     /* Schlagschatten Rahmen festlegen*/
-  border-radius: 20px 0px 20px 0px;    /* abgerundete Ecken Rahmen*/
-  -moz-border-radius: 20px 0px 20px 0px;
-  -webkit-border-radius: 20px 0px 20px 0px;
+  box-shadow: 0 8px 10px #000000;      /* Schlagschatten Rahmen festlegen*/
+  border-radius: 20px 0 20px 0;        /* abgerundete Ecken Rahmen*/
+  -moz-border-radius: 20px 0 20px 0;
+  -webkit-border-radius: 20px 0 20px 0;
   background-color: white;
   text-align: center;                  /* Textausrichtung in der Box */
-  padding-top: 10px;                   /* Abstand oben in der Box */
-  margin-top: 100px;                   /* Abstand der Box nach oben */
-  margin-bottom: 20px;                 /* Abstand der Box nach unten */
-  margin-left:auto;
-  margin-right:auto;
+  padding-top: 1rem;                   /* Abstand oben in der Box */
+  margin-bottom: 1rem;                 /* Abstand der Box nach unten */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*                Textbereich für die einzelnen Seiten formatieren            */
@@ -216,6 +152,8 @@ main {
   width: auto;                         /* Breite des Elementes */
   margin: auto;                        /* Randabstände */
   margin-bottom: 50px;                 /* Abstand von der Fußzeile */
+  padding-right: 1rem;                 /* Innenabstand rechts */
+  padding-left: 1rem;                  /* Innenabstand links */
   flex-grow: 1;                        /* maximale Ausdehnung */
 }
 
@@ -225,12 +163,15 @@ main {
 /*                            Footer formatieren                              */
 /*----------------------------------------------------------------------------*/
 footer {
-  position:fixed;                     /* Position fixiert */
-  padding: 5px;                      /* Innenränder des Footer-Blocks */
-  bottom:0;                           /* Abstand vom Boden */
-  left: 0;                            /* Abstand links vom Seitenrand*/
-  right:0;                            /* Abstand rechts vom Seitenrand*/
-  background: yellowgreen;            /* Hintergrundfarbe */
+  position: fixed;                     /* Position fixiert */
+  padding: 5px;                        /* Innenränder des Footer-Blocks */
+  bottom:0;                            /* Abstand vom Boden */
+  left: 0;                             /* Abstand links vom Seitenrand*/
+  right: 0;                            /* Abstand rechts vom Seitenrand*/
+  background-color: yellowgreen;       /* Hintergrundfarbe */
+  font-size: .875rem;                   /* Schriftgröße */
+  text-transform: uppercase;
+  letter-spacing: .05rem;
 }
 
 footer p {
@@ -244,7 +185,6 @@ footer p {
 /*----------------------------------------------------------------------------*/
 h1 {                                   /* Überschrift h1 */
   color: blue;                         /* Schriftfarbe */
-  font-family: arial, sans-serif;      /* Schriftart */
   margin: 0em 0;                       /* Schriftrand */
  }
 
@@ -256,15 +196,13 @@ h2 {                                   /* Überschrift h2 */
 
 h3 {                                   /* Überschrift h3 */
   color: blue;                         /* Schriftfarbe */
-  font-family: arial, sans-serif;      /* Schriftart */
   font-weight: bold;                   /* Schriftstärke */
   margin-top: 1px;                     /* Schriftrand oben */
   margin-bottom: 1px;                  /* Schriftrand unten */
 }
 
 h4 {                                   /* Überschrift h4 */
-  color:black;                         /* Schriftfarbe */
-  font-family: arial, sans-serif;      /* Schriftart */
+  color: black;                        /* Schriftfarbe */
   font-weight: bold;                   /* Schriftstärke */
   margin-top: 1px;                     /* Schriftrand oben */
   margin-bottom: 1px;                  /* Schriftrand unten */
@@ -325,15 +263,16 @@ figcaption {                         /* Bildunterschrift */
 	bottom: 5px;                       /* Abstand vom Boden */
 	width: 100%;
 	text-align: center;                /* Textausrichtung */
-	line-height: 1em;                  /* Höhe der Textzeile in den Bildern */
-	color: white;                      /* Textfarbe */
-	background: transparent;           /* Hintergrundfarbe */
+	line-height: 1;                    /* Zeilenhöhe der Textzeile in den Bildern */
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  background-color: rgba(255,255,255,.5);           /* halbtransparente Hintergrundfarbe */
 }
 
-.gesamt {                            /* Gesamtbildunterschrift */
+figcaption.gesamt {                  /* Gesamtbildunterschrift */
 	position: relative;                /* Position */
 	color: black;                      /* Textfarbe */
-	background: white;                 /* Hintregrundfarbe */
+  font-style: italic;
 }
 
 /*                                 Liste                                      */
@@ -397,60 +336,41 @@ table.tabelle3 thead {
 /*                     Formatierung des Login-Fensters                        */
 /*----------------------------------------------------------------------------*/
 /* Box für die Eingabe der Daten */
-form {
+.password-box {
   background-color: blue;            /* Hintergrundfarbe */
-  box-shadow:0px 8px 10px #000000;     /* Schlagschatten Rahmen festlegen*/
+  box-shadow: 0 8px 10px #000000;    /* Schlagschatten Rahmen festlegen*/
   color: white;                      /* Textfarbe */
 }
 /* Größe und Position des Texteingabe-Fensters */
 input {
   padding: .2em .5em;
-  margin-top: 5%;                    /* Abstand oben */
-  margin-bottom: 3%;                 /* Abstand unten */
+  margin-top: 2rem;                  /* Abstand oben */
+  margin-bottom: 1rem;               /* Abstand unten */
   margin-left: 34%;                  /* Abstand links */
-  width: 30%;                        /* Breite */
   height: 2em;                       /* Höhe */
   background-color: #fffbf0;         /* Hintergrundfarbe */
   border: 1px solid #e7c157;         /* Rahmen */
 }
 /* Größe und Position des Anmelde-Button */
 button {
-  margin-bottom: 5%;                 /* Abstand unten */
+  margin-bottom: 2rem;               /* Abstand unten */
   margin-left: 40%;                  /* Abstand links */
-  width: 20%;                        /* Breite */
-  height: 3em;                       /* Höhe */
-  border-radius: 10px;               /* Bildränder abrunden */
-  box-shadow:0px 8px 10px #000000;   /* Schlagschatten Rahmen festlegen*/
+  padding: 1em;                      /* Innenabstand */
+  border: none;                      /* Randstyling entfernen */
+  border-radius: 10px;               /* Ränder abrunden */
+  box-shadow: 0 8px 10px #000000;    /* Schlagschatten Rahmen festlegen*/
 }
 
 /*          Anpassung der Inhalte an verschiedene Bildschirmgrößen            */
 /*----------------------------------------------------------------------------*/
-@media (max-width: 599px) {          /* für Bildschirme kleiner 600 Pixel */
-  body {
-    font-size: 0.8rem;               /* Schriftgröße anpassen */
-    padding-top: 8%;                 /* Abstand zum Kopfbereich */
-  }
-  .seitenkopf {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-top: 75px;                /* Abstand der Box nach oben */
-  }
-  h1 {
-    font-size: 0.8rem;               /* h1 Schriftgröße */
-  }
-  form {
-    width: 20em;                     /* Breite der Box für Login */
-  }
-}
 @media (min-width: 600px) {          /* für Bildschirme breiter 600 Pixel */
   body {
     font-size: 1rem;                 /* Schriftgröße anpassen */
-    padding-top: 8%;                 /* Abstand zum Kopfbereich */
   }
   .seitenkopf {
     max-width: 35rem;                /* Breite */
   }
-  main{
+  main {
     max-width: 45rem;                /* Breite */
   }
   h1 {
@@ -468,16 +388,26 @@ button {
 }
 @media (min-width: 1024px) {         /* für Bildschirme größer 1024 Pixel */
   body {
+    padding-top: 14rem;
     font-size: 1.25rem;              /* Schriftgröße anpassen */
-    padding-top: 10%;                /* Abstand zum Kopfbereich */
     background-color: lightgrey;     /* Hintergrundfarbe */
+  }
+  header {
+    position:fixed;                    /* Position fixiert */
+    /* keine Höhenangabe, diese ergibt sich automatisch aus dem Inhalt*/
+    top: 0;                            /* Positionierung vom oberen Seitenrand */
+    right: 0;                          /* Positionierung vom rechten Seitenrand */
+    left: 0;                           /* Positionierung vom linken Seitenrand */
+    z-index: 10;                       /* ein z-index > 1 sorgt dafür, dass der
+                                          Bereich beim Scrollen nicht vom nach-
+                                          folgenden Inhalt überdeckt wird */
   }
   .seitenkopf {
     max-width: 45rem;
     padding-left: 3rem;
     padding-right: 3rem;
   }
-  main{
+  main {
     max-width: 54rem;
   }
   h1 {
@@ -502,7 +432,7 @@ button {
     padding-left: 3rem;
     padding-right: 3rem;
   }
-  main{
+  main {
     max-width: 64rem;                /* Breite */
     padding-left: 3rem;
     padding-right: 3rem;
