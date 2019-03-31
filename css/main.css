@@ -28,10 +28,10 @@ body,
 /*----------------------------------------------------------------------------*/
 header {
   position:fixed;                    /* Position fixiert */
-  width: 100%;                       /* Breite = 100% der Seitenbereite */
+  width: 96%;                        /* Breite = 96% der Seitenbereite */
   /* keine Höhenangabe, diese ergibt sich automatisch aus dem Inhalt*/
   top: 0px;                          /* Abstand vom oberen Seitenrand */
-  left: 0px;                         /* Abstand vom linken Seietenrand */
+  left: 1%;                          /* Abstand vom linken Seietenrand */
   padding: 10px;                     /* Innenränder des Header-Blocks */
   background: yellowgreen;           /* Hintergrundfarbe */
   z-index: 10;                       /* ein z-index > 1 sorgt dafür, dass der
@@ -42,9 +42,11 @@ header {
 /*                              Logo formatieren                              */
 /*----------------------------------------------------------------------------*/
 .logo-img {
-  width: 100%;                       /* Breite des Logos */
+  width: 94%;                        /* Breite des Logos 94 %*/
+  margin-left: 3%;                   /* Rand links 3 % */
   height: auto;                      /* Höhe des Logos an Bildschirm angepasst*/
-  padding: 0rem;                     /* Rand des Logos */
+  border-radius: 10px;               /* abgerundete Ecken */
+  display: inline-block;             /* Ausrichtung in der Box */
 }
 
 /*   Navigation nach Bildschirmbreite horizontal oder vertikal formatieren    */
@@ -52,28 +54,28 @@ header {
 /*               Horizontale Ausrichtung für breite Bildschirme               */
 /*https://wiki.selfhtml.org/wiki/CSS/Tutorials/Dropdown-Men%C3%BCs_mit_CSS_gestalten*/
 /*----------------------------------------------------------------------------*/
+
 input#responsive-nav,                /* Navigations-Icon ausblenden */
 label.responsive-nav-label {
   display: none;
 }
 
 nav ul {
-	margin: 0;
+  margin: 0;
 	padding: 0;
 	display: flex;
 	flex-direction: row;
 }
 
 nav li {
-	list-style: none;
+  list-style: none;
 	margin: 0.5em;
 	padding: 0;
   flex: 1;
-  font-size: 1em;
+  font-size: .8em;                     /* Schriftgröße der Listenelemente */
 }
 
 nav a {
-	display: block;
 	padding: 0.4em;
 	text-decoration: none;               /* keine Aufzählungszeichen */
   font-family: arial, sans-serif;      /* Schriftart */
@@ -103,7 +105,10 @@ nav li[aria-current] a:hover {         /* Farbwechsel beim Überfahren */
 
 label.responsive-nav-label {           /* Navigationsbalken */
   position: relative;
-  display: block;
+  display: flex;
+  width: 87%;
+  left: 5%;
+  border-radius: 10px;                 /* Bildränder abrunden */
   padding: 10px;                       /* Innenabstände */
   background: blue;                    /* Hitergrundfarbe */
   cursor: pointer;                     /* Cursor Handsymbol */
@@ -207,7 +212,7 @@ nav ul ul li {
 /*----------------------------------------------------------------------------*/
 main {
   display: block;
-  background: white;                   /* Hintergrundfarbe */
+  background-color: white;             /* Hintergrundfarbe */
   width: auto;                         /* Breite des Elementes */
   margin: auto;                        /* Randabstände */
   margin-bottom: 50px;                 /* Abstand von der Fußzeile */
@@ -286,7 +291,7 @@ figcaption {
 figure.bild50 {                      /* ordnet 1 Bild zentriert an */
   position: relative;
 	display: inline-block;
-  border-radius: 50%;
+  /*border-radius: 50%;*/
   width: 50%;                        /* Bildbreite 50 % */
   margin-left: 25%;                  /* Rand links 25 % */
 }
@@ -297,7 +302,7 @@ figure.einzel1 {                     /* ordnet 1 Bild zentriert an */
   margin-left: 1%;                   /* Rand links 1 % */
 }
 figure.einzel2 {                     /* ordnet 2 Bilder nebeneinander an */
-	position: relative;
+	position: relative;                /* Originalgröße 1630 x 1400 einstellen */
 	display: inline-block;
   width: 47%;                        /* Bildbreite 47 % */
   margin-left: 2%;                   /* Rand links 2 % */
@@ -389,6 +394,35 @@ table.tabelle3 thead {
   width: 200px;
 }
 
+/*                     Formatierung des Login-Fensters                        */
+/*----------------------------------------------------------------------------*/
+/* Box für die Eingabe der Daten */
+form {
+  background-color: blue;            /* Hintergrundfarbe */
+  box-shadow:0px 8px 10px #000000;     /* Schlagschatten Rahmen festlegen*/
+  color: white;                      /* Textfarbe */
+}
+/* Größe und Position des Texteingabe-Fensters */
+input {
+  padding: .2em .5em;
+  margin-top: 5%;                    /* Abstand oben */
+  margin-bottom: 3%;                 /* Abstand unten */
+  margin-left: 34%;                  /* Abstand links */
+  width: 30%;                        /* Breite */
+  height: 2em;                       /* Höhe */
+  background-color: #fffbf0;         /* Hintergrundfarbe */
+  border: 1px solid #e7c157;         /* Rahmen */
+}
+/* Größe und Position des Anmelde-Button */
+button {
+  margin-bottom: 5%;                 /* Abstand unten */
+  margin-left: 40%;                  /* Abstand links */
+  width: 20%;                        /* Breite */
+  height: 3em;                       /* Höhe */
+  border-radius: 10px;               /* Bildränder abrunden */
+  box-shadow:0px 8px 10px #000000;   /* Schlagschatten Rahmen festlegen*/
+}
+
 /*          Anpassung der Inhalte an verschiedene Bildschirmgrößen            */
 /*----------------------------------------------------------------------------*/
 @media (max-width: 599px) {          /* für Bildschirme kleiner 600 Pixel */
@@ -401,12 +435,11 @@ table.tabelle3 thead {
     padding-right: 1rem;
     margin-top: 75px;                /* Abstand der Box nach oben */
   }
-  main{
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
   h1 {
     font-size: 0.8rem;               /* h1 Schriftgröße */
+  }
+  form {
+    width: 20em;                     /* Breite der Box für Login */
   }
 }
 @media (min-width: 600px) {          /* für Bildschirme breiter 600 Pixel */
@@ -428,6 +461,9 @@ table.tabelle3 thead {
   }
   h3 {
     font-size: 1.2rem;               /* h3 Schriftgröße */
+  }
+  form {
+    width: 25em;                     /* Breite der Box für Login */
   }
 }
 @media (min-width: 1024px) {         /* für Bildschirme größer 1024 Pixel */
@@ -453,6 +489,9 @@ table.tabelle3 thead {
   h3 {
     font-size: 1.5rem;               /* h3 Schriftgröße */
   }
+  form {
+    width: 30em;                     /* Breite der Box für Login */
+  }
 }
 @media (min-width: 1440px) {         /* für Bildschirme größer 1440 Pixel */
   body {
@@ -477,29 +516,7 @@ table.tabelle3 thead {
   h3 {
     font-size: 2rem;                 /* h3 Schriftgröße */
   }
-}
-
-/*                     Formatierung des Login-Fensters                        */
-/*----------------------------------------------------------------------------*/
-form {
-  width: 40em;
-}
-/* Größe und Position des Texteingabe-Fensters */
-input {
-  padding: .2em .5em;
-  margin-top: 5%;                    /* Abstand oben */
-  margin-bottom: 3%;                 /* Abstand unten */
-  margin-left: 34%;                  /* Abstand links */
-  width: 30%;                        /* Breite */
-  height: 2em;                       /* Höhe */
-  background-color: #fffbf0;
-  border: 1px solid #e7c157;
-}
-
-/* Größe und Position des Anmelde-Button */
-button {
-  margin-bottom: 5%;                 /* Abstand unten */
-  margin-left: 40%;                  /* Abstand links */
-  width: 20%;                        /* Breite */
-  height: 3em;                       /* Höhe */
+  form {
+    width: 30em;                     /* Breite der Box für Login */
+  }
 }
