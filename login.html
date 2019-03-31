@@ -32,34 +32,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </script> -->
 <script type="text/javascript">
+  function passw() {
+    if (document.passwort.pswd.value == "goggokart") {
+      document.location.href = "intern.html";
+    } else {
+      /*alert("Falsches Passwort");*/
 
-function passw()
-{
-  if(document.passwort.pswd.value=="goggokart"){
-  document.location.href="intern.html";
-  }else{
-/*alert("Falsches Passwort");*/
+      document.location.href = "login.html";
 
-  document.location.href="login.html";
-
-  }
+    }
   }
 
 
-function myFunction() {
-  var x = document.getElementById("myInput");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
+  function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
   }
-}
 </script>
 
-<form name="passwort">
-
-<input type="password" name=pswd id="myInput">
-<checkbox type="checkbox" onclick="myFunction()">Anzeige
-<button type=button onClick="passw()">anmelden
-
+<form name="passwort" class="password-box">
+  <input type="password" name=pswd id="myInput">
+  <checkbox type="checkbox" onclick="myFunction()">
+  <span>Passwort anzeigen</span>
+  <button type=button onClick="passw()">Anmelden
 </form>
