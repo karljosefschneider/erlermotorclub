@@ -166,8 +166,6 @@ html, body {
   width: 100%;
 }
 body {
-  display: flex;                       /* Child-Elemente in Reihe */
-  flex-direction: column;              /* Reihe als Säule anordnen */
   min-height: auto;                    /* Mindesthöhe Browswerfenster */
   background-color: lightgrey;         /* Hintergrundfarbe */
   font-family: "Calibri", Arial, Helvetica, sans-serif;
@@ -312,7 +310,6 @@ main {
   margin: auto;                        /* Randabstände */
   margin-bottom: 3rem;                 /* Abstand von der Fußzeile */
   padding: 1rem;                       /* Innenabstand links */
-  flex-grow: 1;                        /* maximale Ausdehnung */
 }
 
 /*        Footer  (feststehende Fußzeile mit Impressum und Copyright          */
@@ -432,6 +429,21 @@ figcaption.gesamt {                  /* Gesamtbildunterschrift */
 	color: black;                      /* Textfarbe */
   font-style: italic;
 }
+
+
+/*    Mitglieder Galerie    */
+/*----------------------------------------------------------------------------*/
+
+.galerie {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr) ;
+}
+
+.mitglied {
+  position: relative;
+}
+
 
 /*                                 Liste                                      */
 /*----------------------------------------------------------------------------*/
