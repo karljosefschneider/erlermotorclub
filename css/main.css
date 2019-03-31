@@ -18,15 +18,6 @@ html {
 }
 
 /**
- * Use a more readable tab size (opinionated).
- */
-
-:root {
-	-moz-tab-size: 4;
-	tab-size: 4;
-}
-
-/**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
@@ -51,7 +42,7 @@ body {
  * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
  */
 
-body {
+body, input, button, select {
 	font-family:
 		-apple-system,
 		BlinkMacSystemFont,
@@ -302,14 +293,12 @@ nav a:hover {                          /* Farbwechsel beim Überfahren */
   width: 80%;                          /* Breite der Box festlegen */
   height: auto;                        /* Höhe der Box variabel */
   border: 2px solid #000000;           /* Rahmen  der Textbox festlegen*/
-  box-shadow: 0 8px 10px #000000;      /* Schlagschatten Rahmen festlegen*/
+  box-shadow: 0 8px 10px rgba(0,0,0,.5);      /* Schlagschatten Rahmen festlegen*/
   border-radius: 20px 0 20px 0;        /* abgerundete Ecken Rahmen*/
-  -moz-border-radius: 20px 0 20px 0;
-  -webkit-border-radius: 20px 0 20px 0;
   background-color: white;
   text-align: center;                  /* Textausrichtung in der Box */
   padding-top: 1rem;                   /* Abstand oben in der Box */
-  margin-bottom: 1rem;                 /* Abstand der Box nach unten */
+  margin-bottom: 1.5rem;                 /* Abstand der Box nach unten */
   margin-left: auto;
   margin-right: auto;
 }
@@ -321,9 +310,8 @@ main {
   background-color: white;             /* Hintergrundfarbe */
   width: auto;                         /* Breite des Elementes */
   margin: auto;                        /* Randabstände */
-  margin-bottom: 50px;                 /* Abstand von der Fußzeile */
-  padding-right: 1rem;                 /* Innenabstand rechts */
-  padding-left: 1rem;                  /* Innenabstand links */
+  margin-bottom: 3rem;                 /* Abstand von der Fußzeile */
+  padding: 1rem;                       /* Innenabstand links */
   flex-grow: 1;                        /* maximale Ausdehnung */
 }
 
@@ -356,6 +344,7 @@ footer p {
 h1 {                                   /* Überschrift h1 */
   color: blue;                         /* Schriftfarbe */
   margin: 0em 0;                       /* Schriftrand */
+  font-size: 1.5rem;
  }
 
 h2 {                                   /* Überschrift h2 */
@@ -399,7 +388,6 @@ figcaption {
 figure.bild50 {                      /* ordnet 1 Bild zentriert an */
   position: relative;
 	display: inline-block;
-  /*border-radius: 50%;*/
   width: 50%;                        /* Bildbreite 50 % */
   margin-left: 25%;                  /* Rand links 25 % */
 }
@@ -487,6 +475,11 @@ table.tabelle3 {
   border-color: #ffcc00;           /* Rahmenfarbe */
   border-style: solid;             /* Rahmenlinie */
   color: #000000;
+  hyphens: auto;
+}
+
+table.tabelle3 th {
+  text-align: left;
 }
 
 table.tabelle3 td, table.tabelle3 th {
@@ -499,37 +492,54 @@ table.tabelle3 td, table.tabelle3 th {
 table.tabelle3 thead {
   background-color: #ffcc00;
 }
-#spalte1 {
-  width: 200px;
-}
 
 /*                     Formatierung des Login-Fensters                        */
 /*----------------------------------------------------------------------------*/
 /* Box für die Eingabe der Daten */
 .password-box {
   background-color: blue;            /* Hintergrundfarbe */
-  box-shadow: 0 8px 10px #000000;    /* Schlagschatten Rahmen festlegen*/
+  box-shadow: 0 8px 10px rgba(0,0,0,.5);    /* Schlagschatten Rahmen festlegen*/
   color: white;                      /* Textfarbe */
+  margin: -1rem;
+  padding: 1rem;
+  min-width: 20rem;
+  text-align: center;
 }
+
 /* Größe und Position des Texteingabe-Fensters */
-input {
+#login-password {
+  display: inline-block;
   padding: .2em .5em;
   margin-top: 2rem;                  /* Abstand oben */
-  margin-bottom: 1rem;               /* Abstand unten */
-  margin-left: 34%;                  /* Abstand links */
+  margin-bottom: 0;               /* Abstand unten */
   height: 2em;                       /* Höhe */
   background-color: #fffbf0;         /* Hintergrundfarbe */
   border: 1px solid #e7c157;         /* Rahmen */
 }
+
 /* Größe und Position des Anmelde-Button */
 button {
   margin-bottom: 2rem;               /* Abstand unten */
-  margin-left: 40%;                  /* Abstand links */
-  padding: 1em;                      /* Innenabstand */
+  padding: .5em 3em;                 /* Innenabstand */
   border: none;                      /* Randstyling entfernen */
-  border-radius: 10px;               /* Ränder abrunden */
-  box-shadow: 0 8px 10px #000000;    /* Schlagschatten Rahmen festlegen*/
+  border-radius: 1rem;               /* Ränder abrunden */
+  box-shadow: 0 8px 10px rgba(0,0,0,.5);    /* Schlagschatten Rahmen festlegen*/
 }
+
+
+.show-password-label {
+  display: inline-block;
+  font-size: .75rem;
+  cursor: pointer;
+  display: block;
+  padding-top: .25rem;
+  padding-bottom: 1rem;
+}
+
+.show-password-label input {
+  display: none;
+}
+
 
 /*          Anpassung der Inhalte an verschiedene Bildschirmgrößen            */
 /*----------------------------------------------------------------------------*/
@@ -551,9 +561,6 @@ button {
   }
   h3 {
     font-size: 1.2rem;               /* h3 Schriftgröße */
-  }
-  form {
-    width: 25em;                     /* Breite der Box für Login */
   }
 }
 @media (min-width: 1024px) {         /* für Bildschirme größer 1024 Pixel */
@@ -589,9 +596,6 @@ button {
   h3 {
     font-size: 1.5rem;               /* h3 Schriftgröße */
   }
-  form {
-    width: 30em;                     /* Breite der Box für Login */
-  }
 }
 @media (min-width: 1440px) {         /* für Bildschirme größer 1440 Pixel */
   body {
@@ -604,8 +608,7 @@ button {
   }
   main {
     max-width: 64rem;                /* Breite */
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding: 3rem;
   }
   h1 {
     font-size: 2.5rem;               /* h1 Schriftgröße */
@@ -615,8 +618,5 @@ button {
   }
   h3 {
     font-size: 2rem;                 /* h3 Schriftgröße */
-  }
-  form {
-    width: 30em;                     /* Breite der Box für Login */
   }
 }

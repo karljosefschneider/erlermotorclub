@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Interne Nachrichten des Erler Motor Clubs
-description: Bitte geben Sie das Passwort ein!
+description: Bitte geben Sie das Passwort ein.
 ---
 <!--             Login-Bereich für interne Vereinsnachrichten                -->
 <!----------------------------------------------------------------------------->
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   function myFunction() {
-    var x = document.getElementById("myInput");
+    var x = document.getElementById("login-password");
     if (x.type === "password") {
       x.type = "text";
     } else {
@@ -55,8 +55,10 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <form name="passwort" class="password-box">
-  <input type="password" name=pswd id="myInput">
-  <checkbox type="checkbox" onclick="myFunction()">
-  <span>Passwort anzeigen</span>
+  <input type="password" name="pswd" id="login-password">
+  <label class="show-password-label" for="show-password">
+    <input type="checkbox" onclick="myFunction()" id="show-password">
+    Passwort anzeigen
+  </label>
   <button type=button onClick="passw()">Anmelden
 </form>
