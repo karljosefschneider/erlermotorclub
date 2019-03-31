@@ -415,13 +415,15 @@ figure img {
 
 figcaption {                         /* Bildunterschrift */
 	position: absolute;
-	bottom: 5px;                       /* Abstand vom Boden */
+	bottom: 0;                       /* Abstand vom Boden */
 	width: 100%;
 	text-align: center;                /* Textausrichtung */
 	line-height: 1;                    /* Zeilenhöhe der Textzeile in den Bildern */
   padding-top: .25rem;
   padding-bottom: .25rem;
-  background-color: rgba(255,255,255,.5);           /* halbtransparente Hintergrundfarbe */
+  background-color: rgba(255,255,255,.4);           /* halbtransparente Hintergrundfarbe */
+  text-shadow: 0 0 5px rgba(255,255,255,.75);
+  font-size: .75rem;
 }
 
 figcaption.gesamt {                  /* Gesamtbildunterschrift */
@@ -573,6 +575,11 @@ button {
   }
   h3 {
     font-size: 1.2rem;               /* h3 Schriftgröße */
+  }
+  figcaption {                         /* Bildunterschrift */
+    font-size: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
   }
 }
 @media (min-width: 1024px) {         /* für Bildschirme größer 1024 Pixel */
