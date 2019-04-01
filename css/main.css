@@ -39,7 +39,8 @@ body {
 }
 
 /**
- * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+ * Improve consistency of default fonts in all browsers.
+  (https://github.com/sindresorhus/modern-normalize/issues/3)
  */
 
 body, input, button, select {
@@ -241,7 +242,7 @@ nav a {                                /* Formatierung der Navi-Buttons */
   display: block;
   text-decoration: none;               /* keine Aufzählungszeichen */
   text-align: center;                  /* Schriftausrichtung zentriert */
-  font-size: 1.125em;                     /* Schriftgröße der Links */
+  font-size: 1.125em;                  /* Schriftgröße der Links */
   font-weight: bold;                   /* Schriftart "fett" */
   border: 1px solid darkblue;          /* Rahmen der Boxen */
   border-radius: 10px;                 /* Radien der Rahmen */
@@ -279,7 +280,7 @@ nav a:hover {                          /* Farbwechsel beim Überfahren */
    nav a {
      margin-bottom: 0;
    	 padding: .4em .8em;
-     font-size: .8em;                     /* Schriftgröße der Links */
+     font-size: .8em;                   /* Schriftgröße der Links */
    }
 }
 
@@ -288,15 +289,15 @@ nav a:hover {                          /* Farbwechsel beim Überfahren */
 /*         Box für den Kopfbereich der einzelnen Seiten formatieren           */
 /*----------------------------------------------------------------------------*/
 .seitenkopf {
-  width: 80%;                          /* Breite der Box festlegen */
-  height: auto;                        /* Höhe der Box variabel */
-  border: 2px solid #000000;           /* Rahmen  der Textbox festlegen*/
-  box-shadow: 0 8px 10px rgba(0,0,0,.5);      /* Schlagschatten Rahmen festlegen*/
-  border-radius: 20px 0 20px 0;        /* abgerundete Ecken Rahmen*/
+  width: 80%;                              /* Breite der Box festlegen */
+  height: auto;                            /* Höhe der Box variabel */
+  border: 2px solid #000000;               /* Rahmen  der Textbox festlegen*/
+  box-shadow: 0 8px 10px rgba(0,0,0,.5);   /* Schlagschatten Rahmen festlegen*/
+  border-radius: 20px 0 20px 0;            /* abgerundete Ecken Rahmen*/
   background-color: white;
-  text-align: center;                  /* Textausrichtung in der Box */
-  padding-top: 1rem;                   /* Abstand oben in der Box */
-  margin-bottom: 1.5rem;                 /* Abstand der Box nach unten */
+  text-align: center;                      /* Textausrichtung in der Box */
+  padding-top: 1rem;                       /* Abstand oben in der Box */
+  margin-bottom: 1.5rem;                   /* Abstand der Box nach unten */
   margin-left: auto;
   margin-right: auto;
 }
@@ -415,13 +416,13 @@ figure img {
 
 figcaption {                         /* Bildunterschrift */
 	position: absolute;
-	bottom: 0;                       /* Abstand vom Boden */
+	bottom: 0;                         /* Abstand vom Boden */
 	width: 100%;
 	text-align: center;                /* Textausrichtung */
 	line-height: 1;                    /* Zeilenhöhe der Textzeile in den Bildern */
   padding-top: .25rem;
   padding-bottom: .25rem;
-  background-color: rgba(255,255,255,.4);           /* halbtransparente Hintergrundfarbe */
+  background-color: rgba(255,255,255,.4); /* halbtransparente Hintergrundfarbe */
   text-shadow: 0 0 5px rgba(255,255,255,.75);
   font-size: .75rem;
 }
@@ -511,9 +512,9 @@ table.tabelle3 thead {
 /*----------------------------------------------------------------------------*/
 /* Box für die Eingabe der Daten */
 .password-box {
-  background-color: blue;            /* Hintergrundfarbe */
-  box-shadow: 0 8px 10px rgba(0,0,0,.5);    /* Schlagschatten Rahmen festlegen*/
-  color: white;                      /* Textfarbe */
+  background-color: blue;                  /* Hintergrundfarbe */
+  box-shadow: 0 8px 10px rgba(0,0,0,.5);   /* Schlagschatten Rahmen festlegen*/
+  color: white;                            /* Textfarbe */
   margin: -1rem;
   padding: 1rem;
   min-width: 20rem;
@@ -525,7 +526,7 @@ table.tabelle3 thead {
   display: inline-block;
   padding: .2em .5em;
   margin-top: 2rem;                  /* Abstand oben */
-  margin-bottom: 0;               /* Abstand unten */
+  margin-bottom: 0;                  /* Abstand unten */
   height: 2em;                       /* Höhe */
   background-color: #fffbf0;         /* Hintergrundfarbe */
   border: 1px solid #e7c157;         /* Rahmen */
@@ -533,11 +534,11 @@ table.tabelle3 thead {
 
 /* Größe und Position des Anmelde-Button */
 button {
-  margin-bottom: 2rem;               /* Abstand unten */
-  padding: .5em 3em;                 /* Innenabstand */
-  border: none;                      /* Randstyling entfernen */
-  border-radius: 1rem;               /* Ränder abrunden */
-  box-shadow: 0 8px 10px rgba(0,0,0,.5);    /* Schlagschatten Rahmen festlegen*/
+  margin-bottom: 2rem;                     /* Abstand unten */
+  padding: .5em 3em;                       /* Innenabstand */
+  border: none;                            /* Randstyling entfernen */
+  border-radius: 1rem;                     /* Ränder abrunden */
+  box-shadow: 0 8px 10px rgba(0,0,0,.5);   /* Schlagschatten Rahmen festlegen*/
 }
 
 
@@ -576,7 +577,7 @@ button {
   h3 {
     font-size: 1.2rem;               /* h3 Schriftgröße */
   }
-  figcaption {                         /* Bildunterschrift */
+  figcaption {                       /* Bildunterschrift */
     font-size: 1rem;
     padding-top: .5rem;
     padding-bottom: .5rem;
@@ -589,12 +590,12 @@ button {
     background-color: lightgrey;     /* Hintergrundfarbe */
   }
   header {
-    position:fixed;                    /* Position fixiert */
+    position:fixed;                  /* Position fixiert */
     /* keine Höhenangabe, diese ergibt sich automatisch aus dem Inhalt*/
-    top: 0;                            /* Positionierung vom oberen Seitenrand */
-    right: 0;                          /* Positionierung vom rechten Seitenrand */
-    left: 0;                           /* Positionierung vom linken Seitenrand */
-    z-index: 10;                       /* ein z-index > 1 sorgt dafür, dass der
+    top: 0;                          /* Positionierung vom oberen Seitenrand */
+    right: 0;                        /* Positionierung vom rechten Seitenrand */
+    left: 0;                         /* Positionierung vom linken Seitenrand */
+    z-index: 10;                     /* ein z-index > 1 sorgt dafür, dass der
                                           Bereich beim Scrollen nicht vom nach-
                                           folgenden Inhalt überdeckt wird */
   }
