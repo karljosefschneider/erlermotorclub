@@ -5,55 +5,8 @@ description: Bitte geben Sie das Passwort ein.
 ---
 <!--             Login-Bereich für interne Vereinsnachrichten                -->
 <!----------------------------------------------------------------------------->
-<!-- <script>
-'use strict';
-document.addEventListener('DOMContentLoaded', function () {
-    var passwort = "goggokart";
-    var eingabe = "",
-	    text    = "",
-        zaehler = 1;
-      while (eingabe != passwort && zaehler < 2) {
-        eingabe = window.prompt("Bitte Passwort eingeben", "");
-        zaehler++;
-      }
 
-    if (eingabe != passwort) {
-      while (eingabe != "intern" && zaehler <= 3) {
-        eingabe = window.prompt("Passwort " + zaehler + ". Versuch", "");
-        zaehler++;
-      }
-      document.location.href="index.html";
-    } else {
-      document.location.href="intern.html";
-    }
-  document.querySelector('output').innerText = text;
-
-});
-
-</script> -->
-<script type="text/javascript">
-  function passw() {
-    if (document.passwort.pswd.value == "goggokart") {
-      document.location.href = "intern.html";
-    } else {
-      /*alert("Falsches Passwort");*/
-
-      document.location.href = "login.html";
-
-    }
-  }
-
-
-  function myFunction() {
-    var x = document.getElementById("login-password");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
-  }
-</script>
-
+<!-- Eigabebox für das Passwort -->
 <form name="passwort" class="password-box">
   <input type="password" name="pswd" id="login-password">
   <label class="show-password-label" for="show-password">
@@ -62,3 +15,26 @@ document.addEventListener('DOMContentLoaded', function () {
   </label>
   <button type=button onClick="passw()">Anmelden
 </form>
+
+<script type="text/javascript">
+
+/* Funktion zur Abfrage des Passwortes */
+  function passw() {
+    if (document.passwort.pswd.value == "goggokart") {
+      document.location.href = "intern.html";
+    } else {
+            document.location.href = "login.html";
+    }
+  }
+
+/* Funktion zur Anzeige des Passwortes */
+  function myFunction() {
+    var x = document.getElementById("login-password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
+</script>
